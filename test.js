@@ -1,0 +1,1 @@
+alert('Am a Mobile Device');

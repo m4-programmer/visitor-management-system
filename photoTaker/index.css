@@ -1,0 +1,35 @@
+#basic {
+  background: #ddd;
+  border: 2px solid #ccc;
+  width: 200px;
+  height: 150px;
+  margin: 0 auto;
+}
+
+video, #cssfilters-stream {
+    
+}
+video, #cssfilters-video, #screenshot-img,#photo {
+    width: 200px;
+    height: 150px;
+}
+
+audio, canvas, video {
+    display: inline-block;
+}
+
+button {
+    background: #333;
+    color: #FFF;
+    border-radius: 4px;
+    border: 0;
+    padding: 10px 14px;
+}
+
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+    cursor: pointer;
+    -webkit-appearance: button;
+}
+button, input {
+    line-height: normal;
+}
