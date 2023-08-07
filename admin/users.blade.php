@@ -141,7 +141,7 @@
 													</button>
 												</div>
 												<div class="modal-body">
-													<p class="small">Create a new user to handle Visitors Sign in System</p>
+													<p class="small">Create a new user to handle Vehicle Sign in System</p>
 													<form method="POST" action="../handlers/extra.handlers.php" >
 														
 														<div class="row">

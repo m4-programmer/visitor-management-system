@@ -52,15 +52,13 @@
 												<tr>
 													<!-- <th>S/N</th> -->
 													<th> User</th>
-													<th>Name</th>
-													
-													
+													<th> Visitor Id</th>
+													<th>Driver Name</th>
+													<th>Vehicle Type</th>
 													<th>Phone</th>
 													<th>Address</th>
-													
-													
 													<th>Signin Date</th>
-													<th>Signout Date</th>
+													<th>Signout</th>
 													
 													<th style="width: 10%">Action</th>
 												</tr>
@@ -69,12 +67,13 @@
 												<tr>
 													<!-- <th>S/N</th> -->
 													<th>User</th>
-                           							<th>Name</th>
+													<th> Visitor Id</th>
+                           							<th>Driver Name</th>
+													<th>Vehicle Type</th>
 													<th>Phone</th>
 													<th>Address</th>
-													
 													<th>Signin Date</th>
-													<th>Signout Date</th>
+													<th>Signout</th>
 													
 													<th>Action</th>
 												</tr>
@@ -86,23 +85,29 @@
 										<?php foreach($user->GetVisitors() as $users): ?>
 										<tr>
 											<td class="py-1">
-				                             <img src="<?php echo '../'.$users['image']; ?>" class=" rounded-circle" height="50" alt="image"/>
+				                             <img src="<?php echo '../'.$users['image']; ?>" class=" rounded-circle" style="width:50px;height: 50px;border-radius: 50%" alt="image"/>
 				                             </td>
-											<td><?php echo @$users['full_name']; ?></td>
-											<td><?php echo @$users['phone']; ?></td>
-											<td><?php echo @$users['address']; ?></td>
+											<td style="font-size: 10px;padding:0 5px!important;"><?php echo @$users['id_no']; ?></td>
+											<td style="font-size: 11px;padding:0 10px!important;"><?php echo @$users['full_name']; ?></td>
+											<td style="font-size: 11px;padding:0 10px!important;"><?php echo @$users['vehicle_type']; ?></td>
+											<td style="font-size: 9px;padding:0 10px!important;"><?php echo @$users['phone']; ?></td>
+											<td style="font-size: 11px;padding:0 10px!important;"><?php echo @$users['address']; ?></td>
 											
-											<td><span class="badge badge-danger"><?php echo @$users['sign_in_time']; ?>	</span></td>
-											<td>
+											<td style="font-size: 11px;padding:0 10px!important;">
+												<span >
+													<?php echo date('Y-M-d', strtotime($users['sign_in_time'])); ?>
+												</span>
+											</td>
+											<td style="font-size: 11px">
 												<?php if ($users['sign_out_time'] == ''): ?>
 													<span class="badge badge-primary">
-													Visitor Not Signed out
-												<?php else: echo "<span class='badge badge-danger'>", $users['sign_out_time']; ?>
+														No
+												<?php else: echo "<span class='badge badge-success'>", 'Yes'; ?>
 
 
 												<?php endif ?>
 											 </span></td>
-											<td>
+											<td style="font-size: 11px">
 												
 													<a type="button"  href="visitor_view.blade.php?id_no=<?php echo $users['id_no'] ?>" data-toggle="tooltip" title="" class="btn btn-link btn-success" data-original-title="View">
 														<i class="fa fa-ellipsis-h"></i>

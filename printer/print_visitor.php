@@ -19,7 +19,7 @@
     </div>
       <table width='300px' class="table table-responsive">
 		<tr>
-			<td>&nbsp;<strong class="text-primary"><?php echo 'Visitor Management System'; ?></strong>
+			<td>&nbsp;<strong class="text-primary"><?php echo 'Vehicle Management System'; ?></strong>
 				<br /><br />
 				&nbsp;<strong><span>Visitor ID:</span> # </strong><?php echo $users['id_no'] ?>
 				<br />

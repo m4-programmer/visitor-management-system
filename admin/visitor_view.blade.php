@@ -43,7 +43,6 @@
 
 									<div class="card">
 										<div class="card-header">
-
 											<h5 class="card-title mb-0">Profile Details</h5>
 										</div>
 										<div class="card-body">
@@ -58,79 +57,91 @@
 										
 														<?php foreach($user->GetVisitors($id_no) as $users): ?>
 														<div class="form-group">
-															<label for="inputFirstName">Full name</label>
-														<input type="text" class="form-control" name="fname" value="<?php echo $users['full_name'] ?>" placeholder="First name">
-														
+															<label for="inputFirstName">Driver name</label>
+															<input type="text" class="form-control" name="fname" value="<?php echo $users['full_name'] ?>" placeholder="First name">
+														</div>
+														<div class="form-group">
+															<label for="inputFirstName">Visitor Id</label>
+															<input type="text" class="form-control" name="visitor_id" value="<?php echo $users['id_no'] ?>" placeholder="Visitor Id">
 														</div>
 														<div class="form-group">
 															<label for="inputFirstName">Phone Number</label>
-														<input type="text" class="form-control" name="phone" value="<?php echo @$users['phone'] ?>" placeholder="Last name">
-														
+															<input type="text" class="form-control" name="phone" value="<?php echo @$users['phone'] ?>" placeholder="Last name">
 														</div>
-														<div class="form-group">
-															<label for="inputUsername">Username</label>
-															<input type="text" class="form-control" value="<?php echo @$users['address'] ?> " name="address" placeholder="Address" disabled>
-																
+													</div>
+													<div class="col-md-4">
+														<div class="text-center">
+															<img alt="Charles Hall" id="changes" src="../<?php echo @$users['image'] ?>"  class="rounded-circle img-responsive mt-2" wnameth="128" width="128" height="128" />
 														</div>
-														
-														<div class="form-group">
-															<label >Email</label>
-													<input type="email" class="form-control" name="email" value="<?php echo @$users['email'] ?>" placeholder="Email" disabled>
-													
+													</div>
+													<div class="col-md-12">
+														<div class="row">
+															<div class="form-group col-6">
+																<label for="inputUsername">Address</label>
+																<input type="text" class="form-control" value="<?php echo @$users['address'] ?> " name="address" placeholder="Address" disabled>
+															</div>
+															<div class="form-group col-6">
+																<label >Email</label>
+																<input type="email" class="form-control" name="email" value="<?php echo @$users['email'] ?>" placeholder="Email" disabled>
+															</div>
 														</div>
-														<div class="form-group">
-															<label >Reasons</label>
-													<input type="email" class="form-control" name="email" value="<?php echo @$users['reasons'] ?>" placeholder="Reasons" disabled>
-													
+														<div class="row">
+															<div class="form-group col-12">
+																<label >Reasons</label>
+																<input type="text" class="form-control" name="email" value="<?php echo @$users['reasons'] ?>" placeholder="Reasons" disabled>
+															</div>
 														</div>
-														<div class="form-group">
-															<label>Sign in Time</label>
-															<a class="btn btn-success form-control text-light">
-															<span class="btn-label">
-																
-																<?php echo @$users['sign_in_time'] ?>
-															</span>
-															
-														</a>
+														<!--Drivers Details-->
+														<div class="row">
+															<div class="form-group col-6">
+																<label >Registration Number</label>
+																<input type="text" class="form-control" name="reg" value="<?php echo @$users['registration_number'] ?>" placeholder="Registration Number" disabled>
+															</div>
+															<div class="form-group col-6">
+																<label >Vehicle Type</label>
+																<input type="text" class="form-control" name="veh_type" value="<?php echo @$users['vehicle_type'] ?>" placeholder="Registration Number" disabled>
+															</div>
 														</div>
-														<div class="form-group">
-															<label>Sign Out Time</label>
-															<a class="btn btn-primary form-control text-light">
+														<div class="row">
+															<div class="form-group col-6">
+																<label >Vehicle Colour</label>
+																<input type="text" class="form-control" name="reg" value="<?php echo @$users['vehicle_colour'] ?>" placeholder="Vehicle Colour" disabled>
+															</div>
+															<div class="form-group col-6">
+																<label >Vehicle Make/Model</label>
+																<input type="text" class="form-control" name="veh_type" value="<?php echo @$users['model_make'] ?>" placeholder="Vehicle make" disabled>
+															</div>
+														</div>
+
+														<!-- Sign in and sign out view-->
+														<div class="row">
+															<div class="form-group col-6">
+																<label>Sign in Time</label>
+																<a class="btn btn-success form-control text-light">
+																	<span class="btn-label">
+																		<?php echo @$users['sign_in_time'] ?>
+																	</span>
+																</a>
+															</div>
+															<div class="form-group col-6">
+																<label>Sign Out Time</label>
+																<a class="btn btn-primary form-control text-light">
 															<span class="btn-label">
 																<?php if ($users['sign_out_time'] == ''): ?>
 																	Visitor Not Signed out
 																<?php else: echo $users['sign_out_time'] ?>
 
 																<?php endif ?>
-																
-																
-															</span>
-															
-														</a>
-														</div>
-														
-														
-														
-													</div>
-													<div class="col-md-4">
-														<div class="text-center">
-															<img alt="Charles Hall" id="changes" src="../<?php echo @$users['image'] ?>"  class="rounded-circle img-responsive mt-2" wnameth="128" width="128" height="128" />
-															<!-- <div class="mt-2">
-																<input type="file" name="profile_pics" id="profile_pics" hidden>
-																<p id="text"></p>
-																<span class="btn btn-primary" id="clickme"><i class="fas fa-upload"></i> Upload</span>
-							
 
-															</div> -->
-															
-															<p>
-															
-                  												</p>
+
+															</span>
+
+																</a>
+															</div>
 														</div>
 													</div>
 												</div>
 
-													
 												</div>
 												<?php endforeach; ?>	
 												
