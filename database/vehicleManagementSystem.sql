@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `visitor`
+-- Database: `VehicleManagementSystem`
 --
 
 -- --------------------------------------------------------
@@ -30,10 +30,16 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `sign_in`
 --
-
+'id','id_no','registration_number','model_make','vehicle_type','vehicle_colour',
+    'full_name', 'email','phone','address','reasons','image','sign_in_time','ip_address'
 CREATE TABLE `sign_in` (
   `id` int(4) NOT NULL,
   `id_no` varchar(26) NOT NULL,
+  `registration_number` varchar(100) NOT NULL,
+  `model_make` varchar(100) NOT NULL,
+  `vehicle_type` varchar(100) NOT NULL,
+  `vehicle_colour` varchar(100) NOT NULL,
+
   `full_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `phone` varchar(15) NOT NULL,
