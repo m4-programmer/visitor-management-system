@@ -30,8 +30,6 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `sign_in`
 --
-'id','id_no','registration_number','model_make','vehicle_type','vehicle_colour',
-    'full_name', 'email','phone','address','reasons','image','sign_in_time','ip_address'
 CREATE TABLE `sign_in` (
   `id` int(4) NOT NULL,
   `id_no` varchar(26) NOT NULL,
