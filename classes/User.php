@@ -19,7 +19,7 @@ class User extends Db
 		 date_default_timezone_set("Africa/lagos");
 		  
 	} 
-	public  static function login($fusername,$fpassword){
+	public static function login($fusername,$fpassword){
 		$db =new Db;
 		$user =  $db->fetch('users','','uname = ? AND password = ?',array( $fusername,$fpassword),'','','');
 
@@ -53,7 +53,7 @@ class User extends Db
 	    return $id_no = 'Vis/'.date('Ymd/His',$date).'/'.$unique;
 	}
 	/* Sign In Visitors */
-	public function sign_in($fullname,$email,$phone,$address,$reasons,$image = 'images/avatar_profile.png')
+	public function sign_in($registration_number,$model_make,$vehicle_type,$vehicle_colour,$fullname,$email,$phone,$address,$reasons,$image = 'images/avatar_profile.png')
 	{
          
          // call id generator
@@ -69,8 +69,8 @@ class User extends Db
          	$loginTime = date('Y-m-d h:i:s a');
 
 	        $this->insert('sign_in',
-			array('id','id_no', 'full_name', 'email','phone','address','reasons','image','sign_in_time','ip_address'),
-			array('',$id_no,$fullname,$email,$phone,$address,$reasons,$image,$loginTime,$ip));
+			array('id','id_no','registration_number','model_make','vehicle_type','vehicle_colour', 'full_name', 'email','phone','address','reasons','image','sign_in_time','ip_address'),
+			array('',$id_no,$registration_number,$model_make,$vehicle_type,$vehicle_colour,$fullname,$email,$phone,$address,$reasons,$image,$loginTime,$ip));
 	        $_SESSION['latest_sign_in_visitors'] = $id_no;
 	       
 	        return true;
@@ -166,9 +166,12 @@ class User extends Db
 
  	   public function GetUsers()
 		{
- 			return $this->fetch('users','','rank <> ?',1,'','','');
+ 			return $this->fetch('users','','rank <> ?',1,'date desc','','');
 			
- 	     } 
+ 	     }
+        public function getUser(){
+            return $this->fetch('users','','uname = ?',$_SESSION['uname'],'date desc','','');
+        }
  	     /* Get Logged in user Image */
 		public function GetImage()
 		{
@@ -191,7 +194,7 @@ class User extends Db
 		public function GetVisitors($id_no = null)
 		{
 			if ( is_null($id_no)) {
-				return  $user =  $this->fetch('sign_in','',' ','','','','');
+				return  $user =  $this->fetch('sign_in','',' ','','sign_in_time desc','','');
 			}
 			else{
 				return  $user =  $this->fetch('sign_in','','id_no = ? ',$id_no,'','','');

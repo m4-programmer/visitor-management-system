@@ -8,8 +8,8 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h2>Beautifully designed <span>Visitor's</span> Management System </h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna incididunt ut labore aliqua. </p>
+                                    <h2>Beautifully designed <span>Vehicle</span> Management System </h2>
+                                    <p>We make management easy and fun.</p>
                                     <a class="btn btn-primary btn-lg" href="#">Read More</a>
                                 </div>
                             </div>

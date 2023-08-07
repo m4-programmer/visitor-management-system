@@ -17,8 +17,8 @@
                         <li class="scroll"><a href="#features">Features</a></li>
                         <li class="scroll"><a href="#services">Services</a></li>
                        
-                        <li class="scroll"><a href="sign_in.php">Sign In Visitors</a></li>
-                        <li class="scroll"><a href="sign_out.php">Sign Out Visitors</a></li>
+                        <li class="scroll"><a href="sign_in.php">Sign In Vehicle</a></li>
+                        <li class="scroll"><a href="sign_out.php">Sign Out Vehicle</a></li>
                     </ul>
                 </div>
             </div>
