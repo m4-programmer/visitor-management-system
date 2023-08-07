@@ -15,7 +15,7 @@
   <div class="container-fluid">
  <div class="container-fluid modal-content">
     <div class="modal-header">
-    	<h5 class="text-center">Visitor Management Card</h5>
+    	<h5 class="text-center">Vehicle Management Card</h5>
     </div>
       <table width='300px' class="table table-responsive">
 		<tr>
@@ -23,11 +23,19 @@
 				<br /><br />
 				&nbsp;<strong><span>Visitor ID:</span> # </strong><?php echo $users['id_no'] ?>
 				<br />
-				&nbsp;<strong><span>Visitor Name:</span></strong> <?php echo $users['full_name'] ?>
+				&nbsp;<strong><span>Driver Name:</span></strong> <?php echo $users['full_name'] ?>
 				<br />
-				&nbsp;<strong><span>Visitor Phone:</span> </strong><?php echo $users['phone'] ?>
+				&nbsp;<strong><span>Driver Phone:</span> </strong><?php echo $users['phone'] ?>
 				<br />
-				&nbsp;<strong><span>Visitor Address:</span></strong> <?php echo $users['address'] ?>
+				&nbsp;<strong><span>Driver Address:</span></strong> <?php echo $users['address'] ?>
+                <br />
+				&nbsp;<strong><span>Registration Number:</span></strong> <?php echo $users['registration_number'] ?>
+                <br />
+				&nbsp;<strong><span>Vehicle Model and Make:</span></strong> <?php echo $users['model_make'] ?>
+                <br />
+				&nbsp;<strong><span>Vehicle Type:</span></strong> <?php echo $users['vehicle_type'] ?>
+                <br />
+				&nbsp;<strong><span>Vehicle Colour:</span></strong> <?php echo $users['vehicle_colour'] ?>
 				<br />
 				&nbsp;<strong><span>Signin Time:</span> </strong><?php echo $users['sign_in_time'] ?>
 			</td>

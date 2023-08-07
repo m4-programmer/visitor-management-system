@@ -11,10 +11,10 @@ if (isset($_POST['sign_out'])) {
 			header("location: ../sign_out.php?err_msg=Incorrect Visitor Id please check the Id");
 		}else if (strlen($check_id_no) > 5)//because true and false are < than 5 in length
 		 {
-			header("location: ../sign_out.php?err_msg=Visitor has already sign_out at $check_id_no");
+			header("location: ../sign_out.php?err_msg=Vehicle has already sign_out at $check_id_no");
 		}
 		else {
-			header("location: ../sign_out.php?successMsg=Visitor Signed out successfully");
+			header("location: ../sign_out.php?successMsg=Vehicle Signed out successfully");
 		}
 	}
 }

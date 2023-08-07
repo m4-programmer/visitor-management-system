@@ -7,7 +7,7 @@ class Db
 {
 	private $dbhost = "localhost";
 	private $dbuser = "root";
-	private $dbname = "visitor";
+	private $dbname = "vehicleManagementSystem";
 	private $dbpword = "";
 
 	private $error;

@@ -16,7 +16,7 @@ if (isset($_POST['sign_in'])) {
   
      
 	// before user is signed below, we upload his image to our system. which is done in the function above
-	$signin = $user->sign_in($full_name,$email,$phone,$address,$message,$file);
+	$signin = $user->sign_in($registration_number,$model_make,$vehicle_type,$vehicle_colour,$full_name,$email,$phone,$address,$message,$file);
 
 	if ($signin == true) {
 		// get Registered Visitor Generated Id;

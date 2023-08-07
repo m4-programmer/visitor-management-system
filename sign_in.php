@@ -55,14 +55,57 @@ video, #cssfilters-video, #screenshot-img,#photo {
                     <!-- Contact Form -->
 	                    <div class="col-md-8 ">
 	                    	<div class="">
-	                        <h4 class="text-center">Visitor's Sign In</h4>
+	                        <h4 class="text-center">Vehicle Sign In</h4>
 	                        <form class="form" method="post" action="handlers/sign_in.php" >
 	                           
 	                            <div class="row">
+                                    <!--Vehicle Details-->
+                                    <!--Registration Number-->
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-group">
+                                            <div class="icon"><i class="fa fa-user"></i></div>
+                                            <input type="text" name="registration_number" placeholder="Registration Number" >
+                                        </div>
+                                    </div>
+                                    <!--Vehicle Make and Model-->
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-group">
+                                            <div class="icon"><i class="fa fa-user"></i></div>
+                                            <input type="text" name="model_make" placeholder="Vehicle Make and Model" >
+                                        </div>
+                                    </div>
+                                    <!--Vehicle Type-->
+                                    <?php
+                                    $vehicleTypes = ['Car','Truck','Motorcycle','Van','SUV','Bus','Minivan','Pickup Truck','Convertible','Coupe',
+                                        'Hatchback','Sedan','Station Wagon','Crossover','Electric Vehicle (EV)','Hybrid Vehicle','Commercial Vehicle',
+                                        'Off-road Vehicle','RV (Recreational Vehicle)','Motorhome','Trailer','Moped','Scooter','Bicycle',
+                                    ];
+
+                                    ?>
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-group">
+                                            <div class="icon"><i class="fa fa-user"></i></div>
+                                            <select name="vehicle_type" class="form-control" id="" >
+                                                <option value="" disabled selected>Select Vehicle Type</option>
+                                                <?php foreach($vehicleTypes as $data):?>
+                                                    <option value="<?php echo $data ?>"><?php echo $data ?></option>
+                                                <?php endforeach;?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!--Vehicle Colour-->
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-group">
+                                            <div class="icon"><i class="fa fa-user"></i></div>
+                                            <input type="text" name="vehicle_colour" placeholder="Vehicle Colour" >
+                                        </div>
+                                    </div>
+                                    <!--End of Vehice Details-->
+                                    <!--Drivers Details-->
 	                                <div class="col-lg-6 col-md-6 col-12">
 	                                    <div class="form-group">
 	                                        <div class="icon"><i class="fa fa-user"></i></div>
-	                                        <input type="text" name="full_name" placeholder="Full Name" >
+	                                        <input type="text" name="full_name" placeholder="Driver Name" >
 	                                    </div>
 	                                </div>
 	                                <div class="col-lg-6 col-md-6 col-12">
@@ -136,7 +179,7 @@ video, #cssfilters-video, #screenshot-img,#photo {
 	                    </div>
 	                    <div class="col-12 col-md-12 col-lg-12">
                             <div class="form-group button">
-                                <button type="submit" name="sign_in" class="bizwheel-btn theme-2">Sign In Visitors</button>
+                                <button type="submit" name="sign_in" class="bizwheel-btn theme-2">Sign In Vehicle</button>
                             </div>
                            
 															
@@ -145,18 +188,6 @@ video, #cssfilters-video, #screenshot-img,#photo {
 	              <script type="text/javascript">
                             	var md = new MobileDetect(window.navigator.userAgent);
                             	console.log( md.mobile() );
-                            	//alert('Mobile:'+ md.mobile());
-                            	//alert('Safari:'+ md.userAgent());
-        //                     	console.log('Mobile:'+ md.mobile() );          // 'Sony'
-								// console.log('Phone:'+ md.phone() );           // 'Sony'
-								// console.log('Tablet:'+ md.tablet() );          // null
-								// console.log('Safari:'+ md.userAgent() );       // 'Safari'
-								// console.log('AndroidOS:'+ md.os() );              // 'AndroidOS'
-								// console.log('IPhone:'+ md.is('iPhone') );      // false
-								// console.log('Bot:'+ md.is('bot') );         // false
-								// console.log('Webkit:'+ md.version('Webkit') );         // 534.3
-								// console.log('Build:'+ md.versionStr('Build') );       // '4.1.A.0.562'
-								// console.log('xbox:'+ md.match('playstation|xbox') ); // false
 
 								if (md.mobile() != null ) {
 									
